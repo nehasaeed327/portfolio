@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Neha Saeed - Software Engineer building modern, responsive websites and digital experiences for startups and businesses.">
+
+    <meta
+        name="description"
+        content="Neha Saeed - Software Engineer building modern, responsive websites and digital experiences for startups and businesses."
+    >
+
     <title>Neha Saeed | Software Engineer</title>
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Tailwind Configuration -->
@@ -19,31 +25,57 @@
                         electric: "#2563EB",
                         softgray: "#E5E7EB"
                     },
+
                     fontFamily: {
                         sans: ["Inter", "sans-serif"]
                     },
+
                     animation: {
                         "float": "float 5s ease-in-out infinite",
                         "pulse-soft": "pulseSoft 2.5s ease-in-out infinite",
                         "slide-up": "slideUp 0.8s ease forwards",
                         "fade-in": "fadeIn 1s ease forwards"
                     },
+
                     keyframes: {
                         float: {
-                            "0%, 100%": { transform: "translateY(0px)" },
-                            "50%": { transform: "translateY(-12px)" }
+                            "0%, 100%": {
+                                transform: "translateY(0px)"
+                            },
+                            "50%": {
+                                transform: "translateY(-12px)"
+                            }
                         },
+
                         pulseSoft: {
-                            "0%, 100%": { transform: "scale(1)", opacity: "1" },
-                            "50%": { transform: "scale(1.08)", opacity: "0.85" }
+                            "0%, 100%": {
+                                transform: "scale(1)",
+                                opacity: "1"
+                            },
+                            "50%": {
+                                transform: "scale(1.08)",
+                                opacity: "0.85"
+                            }
                         },
+
                         slideUp: {
-                            "0%": { opacity: "0", transform: "translateY(35px)" },
-                            "100%": { opacity: "1", transform: "translateY(0)" }
+                            "0%": {
+                                opacity: "0",
+                                transform: "translateY(35px)"
+                            },
+                            "100%": {
+                                opacity: "1",
+                                transform: "translateY(0)"
+                            }
                         },
+
                         fadeIn: {
-                            "0%": { opacity: "0" },
-                            "100%": { opacity: "1" }
+                            "0%": {
+                                opacity: "0"
+                            },
+                            "100%": {
+                                opacity: "1"
+                            }
                         }
                     }
                 }
@@ -53,333 +85,1579 @@
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <script
+        src="https://unpkg.com/lucide@latest"
+    ></script>
 
     <style>
-        html { scroll-behavior: smooth; }
-        body { background: #0b0d10; color: #ffffff; font-family: "Inter", sans-serif; overflow-x: hidden; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0d10;
+            color: #ffffff;
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;
+        }
 
         /* Background grid */
+
         .grid-background {
             background-image:
                 linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
             background-size: 60px 60px;
         }
 
         /* Blue glow */
+
         .blue-glow {
             position: absolute;
             width: 500px;
             height: 500px;
+
             background: rgba(37, 99, 235, 0.13);
+
             filter: blur(120px);
+
             border-radius: 50%;
+
             pointer-events: none;
         }
 
-        /* Glass effect */
+        /* Glass */
+
         .glass {
             background: rgba(255,255,255,0.035);
+
             border: 1px solid rgba(255,255,255,0.08);
+
             backdrop-filter: blur(20px);
+
             -webkit-backdrop-filter: blur(20px);
         }
 
-        /* Hover & animations */
-        .project-image { transition: transform 0.6s ease; }
-        .project-card:hover .project-image { transform: scale(1.04); }
+        /* Project image */
+
+        .project-image {
+            transition: transform 0.6s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.04);
+        }
+
+        /* Reveal animation */
 
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .blue-line { width: 45px; height: 3px; background: #2563EB; }
+        /* Blue line */
 
-        .primary-button { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .primary-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+        .blue-line {
+            width: 45px;
+            height: 3px;
+            background: #2563EB;
         }
 
-        .navbar { transition: background 0.3s ease, border 0.3s ease; }
+        /* Button */
+
+        .primary-button {
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 40px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Navbar */
+
+        .navbar {
+            transition:
+                background 0.3s ease,
+                border 0.3s ease;
+        }
+
         .navbar.scrolled {
             background: rgba(11, 13, 16, 0.88);
             border-bottom: 1px solid rgba(255,255,255,0.08);
             backdrop-filter: blur(18px);
         }
 
-        #mobileMenu { transition: max-height 0.4s ease, opacity 0.3s ease; }
+        /* WhatsApp */
+
+        .whatsapp-button {
+            box-shadow:
+                0 10px 35px rgba(37, 211, 102, 0.25);
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.08);
+            box-shadow:
+                0 15px 45px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Mobile menu */
+
+        #mobileMenu {
+            transition:
+                max-height 0.4s ease,
+                opacity 0.3s ease;
+        }
+
+
+        /* Project showcase */
+        .project-cover {
+            min-height: 250px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-cover {
+            transform: scale(1.015);
+        }
+
+        .project-category {
+            font-size: 0.75rem;
+            line-height: 1rem;
+            font-weight: 500;
+            color: #93c5fd;
+            background: rgba(59,130,246,0.10);
+            border: 1px solid rgba(96,165,250,0.20);
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        .restaurant-cover {
+            background: radial-gradient(circle at 15% 20%, rgba(249,115,22,0.18), transparent 30%),
+                        radial-gradient(circle at 85% 75%, rgba(37,99,235,0.18), transparent 35%),
+                        linear-gradient(135deg, #111827, #0b0d10);
+        }
+
+        .corporate-cover,
+        .dashboard-cover {
+            background: radial-gradient(circle at 80% 20%, rgba(37,99,235,0.24), transparent 35%),
+                        linear-gradient(135deg, #101827, #0b0d10);
+        }
+
+        .creative-cover,
+        .design-cover {
+            background: radial-gradient(circle at 20% 20%, rgba(139,92,246,0.20), transparent 32%),
+                        radial-gradient(circle at 80% 80%, rgba(37,99,235,0.18), transparent 35%),
+                        linear-gradient(135deg, #15121f, #0b0d10);
+        }
+
+        .modern-cover {
+            background: radial-gradient(circle at 70% 25%, rgba(0,163,255,0.18), transparent 35%),
+                        linear-gradient(135deg, #10151c, #0b0d10);
+        }
+
+        .game-cover {
+            background: radial-gradient(circle at 25% 75%, rgba(34,197,94,0.12), transparent 30%),
+                        radial-gradient(circle at 80% 20%, rgba(37,99,235,0.20), transparent 35%),
+                        linear-gradient(135deg, #0d1715, #0b0d10);
+        }
+
+        .react-cover {
+            background: radial-gradient(circle at 50% 20%, rgba(56,189,248,0.20), transparent 35%),
+                        radial-gradient(circle at 80% 80%, rgba(37,99,235,0.16), transparent 35%),
+                        linear-gradient(135deg, #0d1720, #0b0d10);
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            line-height: 1rem;
+            color: rgb(156 163 175);
+            border: 1px solid rgba(255,255,255,0.10);
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.5rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            color: #60a5fa;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: color 0.25s ease, transform 0.25s ease;
+        }
+
+        .project-link:hover {
+            color: #93c5fd;
+            transform: translateX(3px);
+        }
+
     </style>
 </head>
 
+
 <body class="grid-background">
 
-    <!-- NAVBAR -->
-    <header id="navbar" class="navbar fixed top-0 left-0 w-full z-50">
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header
+        id="navbar"
+        class="navbar fixed top-0 left-0 w-full z-50"
+    >
+
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
             <div class="h-20 flex items-center justify-between">
-                
+
                 <!-- Logo -->
-                <a href="#home" class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-electric flex items-center justify-center shadow-lg shadow-blue-500/20">
-                        <span class="font-bold text-lg">NS</span>
+
+                <a
+                    href="#home"
+                    class="flex items-center gap-3"
+                >
+
+                    <div
+                        class="w-10 h-10 rounded-xl bg-electric flex items-center justify-center shadow-lg shadow-blue-500/20"
+                    >
+                        <span class="font-bold text-lg">
+                            NS
+                        </span>
                     </div>
+
                     <div>
-                        <p class="font-bold text-white">Neha Saeed</p>
-                        <p class="text-xs text-gray-500">Software Engineer</p>
+                        <p class="font-bold text-white">
+                            Neha Saeed
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            Software Engineer
+                        </p>
                     </div>
+
                 </a>
+
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center gap-8" aria-label="Primary Navigation">
-                    <a href="#home" class="text-sm text-gray-300 hover:text-white transition">Home</a>
-                    <a href="#about" class="text-sm text-gray-300 hover:text-white transition">About</a>
-                    <a href="#services" class="text-sm text-gray-300 hover:text-white transition">Services</a>
-                    <a href="#projects" class="text-sm text-gray-300 hover:text-white transition">Projects</a>
-                    <a href="#contact" class="text-sm text-gray-300 hover:text-white transition">Contact</a>
+
+                <nav class="hidden md:flex items-center gap-8">
+
+                    <a
+                        href="#home"
+                        class="text-sm text-gray-300 hover:text-white transition"
+                    >
+                        Home
+                    </a>
+
+                    <a
+                        href="#about"
+                        class="text-sm text-gray-300 hover:text-white transition"
+                    >
+                        About
+                    </a>
+
+                    <a
+                        href="#services"
+                        class="text-sm text-gray-300 hover:text-white transition"
+                    >
+                        Services
+                    </a>
+
+                    <a
+                        href="#projects"
+                        class="text-sm text-gray-300 hover:text-white transition"
+                    >
+                        Projects
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="text-sm text-gray-300 hover:text-white transition"
+                    >
+                        Contact
+                    </a>
+
                 </nav>
 
+
                 <!-- Desktop CTA -->
-                <a href="https://wa.me/923117329783?text=Hi%20Neha%2C%20I%20would%20like%20to%20discuss%20a%20website%20project." 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="hidden md:flex items-center gap-2 bg-electric hover:bg-blue-700 px-5 py-3 rounded-xl text-sm font-semibold transition">
+
+                <a
+                    href="https://wa.me/923117329783?text=Hi%20Neha%2C%20I%20would%20like%20to%20discuss%20a%20website%20project."
+                    target="_blank"
+                    class="hidden md:flex items-center gap-2 bg-electric hover:bg-blue-700 px-5 py-3 rounded-xl text-sm font-semibold transition"
+                >
+
                     Start a Project
+
                     <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+
                 </a>
 
-                <!-- Mobile Menu Button -->
-                <button id="menuButton" class="md:hidden text-gray-300" aria-label="Toggle navigation menu">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+
+                <!-- Mobile button -->
+
+                <button
+                    id="menuButton"
+                    class="md:hidden text-gray-300"
+                >
+
+                    <i
+                        data-lucide="menu"
+                        class="w-6 h-6"
+                    ></i>
+
                 </button>
+
             </div>
+
 
             <!-- Mobile Menu -->
-            <div id="mobileMenu" class="md:hidden max-h-0 opacity-0 overflow-hidden">
+
+            <div
+                id="mobileMenu"
+                class="md:hidden max-h-0 opacity-0 overflow-hidden"
+            >
+
                 <div class="pb-6 pt-3 space-y-4">
-                    <a href="#home" class="mobile-link block text-gray-300">Home</a>
-                    <a href="#about" class="mobile-link block text-gray-300">About</a>
-                    <a href="#services" class="mobile-link block text-gray-300">Services</a>
-                    <a href="#projects" class="mobile-link block text-gray-300">Projects</a>
-                    <a href="#contact" class="mobile-link block text-gray-300">Contact</a>
+
+                    <a
+                        href="#home"
+                        class="mobile-link block text-gray-300"
+                    >
+                        Home
+                    </a>
+
+                    <a
+                        href="#about"
+                        class="mobile-link block text-gray-300"
+                    >
+                        About
+                    </a>
+
+                    <a
+                        href="#services"
+                        class="mobile-link block text-gray-300"
+                    >
+                        Services
+                    </a>
+
+                    <a
+                        href="#projects"
+                        class="mobile-link block text-gray-300"
+                    >
+                        Projects
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="mobile-link block text-gray-300"
+                    >
+                        Contact
+                    </a>
+
                 </div>
+
             </div>
+
         </div>
+
     </header>
 
-    <!-- HERO SECTION -->
-    <main id="home">
-        <section class="relative min-h-screen flex items-center pt-28 overflow-hidden">
-            <div class="blue-glow top-10 -left-40"></div>
-            <div class="blue-glow bottom-0 right-[-200px]"></div>
 
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    
-                    <!-- Text Content -->
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <main id="home">
+
+        <section
+            class="relative min-h-screen flex items-center pt-28 overflow-hidden"
+        >
+
+            <!-- Glow -->
+
+            <div
+                class="blue-glow top-10 -left-40"
+            ></div>
+
+            <div
+                class="blue-glow bottom-0 right-[-200px]"
+            ></div>
+
+
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-8 w-full"
+            >
+
+                <div
+                    class="grid lg:grid-cols-2 gap-16 items-center"
+                >
+
+
+                    <!-- Hero text -->
+
                     <div class="relative z-10">
-                        <div class="reveal flex items-center gap-3 mb-7">
-                            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                            <span class="text-sm text-gray-400">Available for new projects</span>
+
+                        <div
+                            class="reveal flex items-center gap-3 mb-7"
+                        >
+
+                            <span
+                                class="w-2 h-2 rounded-full bg-green-400 animate-pulse"
+                            ></span>
+
+                            <span class="text-sm text-gray-400">
+                                Available for new projects
+                            </span>
+
                         </div>
 
-                        <h1 class="reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
-                            I build websites <span class="text-electric">that help businesses grow.</span>
+
+                        <h1
+                            class="reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight"
+                        >
+
+                            I build websites
+
+                            <span class="text-electric">
+                                that help businesses grow.
+                            </span>
+
                         </h1>
 
-                        <p class="reveal mt-7 text-lg text-gray-400 max-w-xl leading-8">
-                            I'm Neha Saeed, a Software Engineer helping startups and businesses turn their ideas into modern, responsive, and professional digital experiences.
+
+                        <p
+                            class="reveal mt-7 text-lg text-gray-400 max-w-xl leading-8"
+                        >
+
+                            I'm Neha Saeed, a Software Engineer helping
+                            startups and businesses turn their ideas into
+                            modern, responsive and professional digital
+                            experiences.
+
                         </p>
 
-                        <div class="reveal flex flex-col sm:flex-row gap-4 mt-9">
-                            <a href="#projects" class="primary-button inline-flex items-center justify-center gap-2 bg-electric px-7 py-4 rounded-xl font-semibold">
+
+                        <!-- Buttons -->
+
+                        <div
+                            class="reveal flex flex-col sm:flex-row gap-4 mt-9"
+                        >
+
+                            <a
+                                href="#projects"
+                                class="primary-button inline-flex items-center justify-center gap-2 bg-electric px-7 py-4 rounded-xl font-semibold"
+                            >
+
                                 View My Work
-                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+
+                                <i
+                                    data-lucide="arrow-down"
+                                    class="w-4 h-4"
+                                ></i>
+
                             </a>
-                            <a href="https://wa.me/923117329783?text=Hi%20Neha%2C%20I%20want%20to%20discuss%20a%20website%20project." 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-blue-500/50 px-7 py-4 rounded-xl font-semibold text-gray-200 transition">
+
+
+                            <a
+                                href="https://wa.me/923117329783?text=Hi%20Neha%2C%20I%20want%20to%20discuss%20a%20website%20project."
+                                target="_blank"
+                                class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-blue-500/50 px-7 py-4 rounded-xl font-semibold text-gray-200 transition"
+                            >
+
                                 Let's Talk
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+
+                                <i
+                                    data-lucide="message-circle"
+                                    class="w-4 h-4"
+                                ></i>
+
                             </a>
+
                         </div>
 
-                        <div class="reveal flex flex-wrap gap-10 mt-12 pt-8 border-t border-white/10">
+
+                        <!-- Mini stats -->
+
+                        <div
+                            class="reveal flex flex-wrap gap-10 mt-12 pt-8 border-t border-white/10"
+                        >
+
                             <div>
-                                <p class="text-2xl font-bold">Modern</p>
-                                <p class="text-sm text-gray-500 mt-1">UI / UX</p>
+
+                                <p class="text-2xl font-bold">
+                                    Modern
+                                </p>
+
+                                <p class="text-sm text-gray-500 mt-1">
+                                    UI / UX
+                                </p>
+
                             </div>
+
+
                             <div>
-                                <p class="text-2xl font-bold">Responsive</p>
-                                <p class="text-sm text-gray-500 mt-1">Every device</p>
+
+                                <p class="text-2xl font-bold">
+                                    Responsive
+                                </p>
+
+                                <p class="text-sm text-gray-500 mt-1">
+                                    Every device
+                                </p>
+
                             </div>
+
+
                             <div>
-                                <p class="text-2xl font-bold">Business</p>
-                                <p class="text-sm text-gray-500 mt-1">Focused</p>
+
+                                <p class="text-2xl font-bold">
+                                    Business
+                                </p>
+
+                                <p class="text-sm text-gray-500 mt-1">
+                                    Focused
+                                </p>
+
                             </div>
+
                         </div>
+
                     </div>
 
-                    <!-- Hero Visual -->
-                    <div class="relative flex justify-center lg:justify-end reveal">
-                        <div class="absolute w-72 h-72 bg-blue-600/20 blur-[100px] rounded-full"></div>
-                        <div class="relative w-[310px] sm:w-[380px] lg:w-[450px] animate-float">
-                            <div class="absolute inset-0 bg-electric/20 blur-3xl rounded-full"></div>
-                            <img src="website developer.jpg" alt="Neha Saeed - Software Engineer Portfolio" class="relative w-full rounded-[35px] border border-white/10 shadow-2xl">
-                            
-                            <div class="absolute -left-8 bottom-12 glass rounded-2xl px-5 py-4 shadow-2xl">
+
+                    <!-- Hero image -->
+
+                    <div
+                        class="relative flex justify-center lg:justify-end reveal"
+                    >
+
+                        <!-- Large glow -->
+
+                        <div
+                            class="absolute w-72 h-72 bg-blue-600/20 blur-[100px] rounded-full"
+                        ></div>
+
+
+                        <!-- Image card -->
+
+                        <div
+                            class="relative w-[310px] sm:w-[380px] lg:w-[450px] animate-float"
+                        >
+
+                            <div
+                                class="absolute inset-0 bg-electric/20 blur-3xl rounded-full"
+                            ></div>
+
+                            <img
+                                src="website developer.jpg"
+                                alt="Neha Saeed Software Engineer"
+                                class="relative w-full rounded-[35px] border border-white/10 shadow-2xl"
+                            >
+
+
+                            <!-- Floating card -->
+
+                            <div
+                                class="absolute -left-8 bottom-12 glass rounded-2xl px-5 py-4 shadow-2xl"
+                            >
+
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-xl bg-electric/20 flex items-center justify-center">
-                                        <i data-lucide="code-2" class="w-5 h-5 text-blue-400"></i>
+
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-electric/20 flex items-center justify-center"
+                                    >
+
+                                        <i
+                                            data-lucide="code-2"
+                                            class="w-5 h-5 text-blue-400"
+                                        ></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <p class="text-xs text-gray-500">
+                                            Expertise
+                                        </p>
+
+                                        <p class="font-semibold text-sm">
+                                            Web Development
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Floating availability -->
+
+                            <div
+                                class="absolute -right-5 top-14 glass rounded-2xl px-5 py-4"
+                            >
+
+                                <div class="flex items-center gap-2">
+
+                                    <span
+                                        class="w-2 h-2 rounded-full bg-green-400"
+                                    ></span>
+
+                                    <span class="text-sm">
+                                        Available
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             ABOUT
+        ========================================== -->
+
+        <section
+            id="about"
+            class="py-28 border-t border-white/5"
+        >
+
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-8"
+            >
+
+                <div
+                    class="grid lg:grid-cols-2 gap-16 items-center"
+                >
+
+                    <div class="reveal">
+
+                        <div class="blue-line mb-6"></div>
+
+                        <p
+                            class="text-electric text-sm font-semibold uppercase tracking-[0.2em]"
+                        >
+                            About Me
+                        </p>
+
+                        <h2
+                            class="text-4xl sm:text-5xl font-bold mt-4 leading-tight"
+                        >
+                            Turning ideas into
+                            <span class="text-gray-500">
+                                digital experiences.
+                            </span>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="reveal">
+
+                        <p
+                            class="text-gray-400 text-lg leading-8"
+                        >
+
+                            I create websites that don't just look good —
+                            they are designed to communicate your brand,
+                            make information easy to find and give your
+                            customers a professional online experience.
+
+                        </p>
+
+                        <p
+                            class="text-gray-500 leading-7 mt-6"
+                        >
+
+                            My focus is clean design, responsive development,
+                            strong user experience and websites that support
+                            real business goals.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SERVICES
+        ========================================== -->
+
+        <section
+            id="services"
+            class="py-28 bg-white/[0.015] border-y border-white/5"
+        >
+
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-8"
+            >
+
+                <div class="reveal text-center max-w-2xl mx-auto">
+
+                    <div class="blue-line mx-auto mb-6"></div>
+
+                    <p
+                        class="text-electric text-sm font-semibold uppercase tracking-[0.2em]"
+                    >
+                        What I Do
+                    </p>
+
+                    <h2
+                        class="text-4xl sm:text-5xl font-bold mt-4"
+                    >
+                        Websites built for
+                        <span class="text-gray-500">
+                            business.
+                        </span>
+                    </h2>
+
+                    <p class="text-gray-500 mt-5">
+                        Professional web solutions for startups,
+                        restaurants and growing businesses.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="grid md:grid-cols-3 gap-6 mt-16"
+                >
+
+                    <!-- Service -->
+
+                    <div
+                        class="reveal glass rounded-3xl p-8 hover:border-blue-500/30 transition group"
+                    >
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-7 group-hover:bg-blue-500/20 transition"
+                        >
+
+                            <i
+                                data-lucide="layout"
+                                class="w-7 h-7 text-blue-400"
+                            ></i>
+
+                        </div>
+
+                        <h3
+                            class="text-xl font-bold"
+                        >
+                            Website Development
+                        </h3>
+
+                        <p
+                            class="text-gray-500 leading-7 mt-4"
+                        >
+                            Modern websites designed around your brand,
+                            audience and business goals.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Service -->
+
+                    <div
+                        class="reveal glass rounded-3xl p-8 hover:border-blue-500/30 transition group"
+                    >
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-7 group-hover:bg-blue-500/20 transition"
+                        >
+
+                            <i
+                                data-lucide="smartphone"
+                                class="w-7 h-7 text-blue-400"
+                            ></i>
+
+                        </div>
+
+                        <h3
+                            class="text-xl font-bold"
+                        >
+                            Responsive Design
+                        </h3>
+
+                        <p
+                            class="text-gray-500 leading-7 mt-4"
+                        >
+                            Websites that look polished and work smoothly
+                            across phones, tablets and desktops.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Service -->
+
+                    <div
+                        class="reveal glass rounded-3xl p-8 hover:border-blue-500/30 transition group"
+                    >
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-7 group-hover:bg-blue-500/20 transition"
+                        >
+
+                            <i
+                                data-lucide="rocket"
+                                class="w-7 h-7 text-blue-400"
+                            ></i>
+
+                        </div>
+
+                        <h3
+                            class="text-xl font-bold"
+                        >
+                            Startup Websites
+                        </h3>
+
+                        <p
+                            class="text-gray-500 leading-7 mt-4"
+                        >
+                            Conversion-focused landing pages and websites
+                            that help startups present their ideas clearly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PROJECTS
+        ========================================== -->
+
+        <section
+            id="projects"
+            class="py-28"
+        >
+
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-8"
+            >
+
+                <div
+                    class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal"
+                >
+
+                    <div>
+
+                        <div class="blue-line mb-6"></div>
+
+                        <p
+                            class="text-electric text-sm font-semibold uppercase tracking-[0.2em]"
+                        >
+                            Selected Work
+                        </p>
+
+                        <h2
+                            class="text-4xl sm:text-5xl font-bold mt-4"
+                        >
+                            Projects that
+                            <span class="text-gray-500">
+                                speak for themselves.
+                            </span>
+                        </h2>
+
+                    </div>
+
+                    <p
+                        class="text-gray-500 max-w-md"
+                    >
+                        A selection of modern website concepts created
+                        to solve real business and branding problems.
+                    </p>
+
+                </div>
+
+
+                
+                <!-- Project Grid -->
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7 mt-16">
+
+                    <!-- Project 01 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="https://nehasaeed327.github.io/thepizzahut/" target="_blank" rel="noopener noreferrer"
+                               class="project-cover restaurant-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between">
+                                        <span class="project-category">Restaurant</span><span class="text-gray-500 text-sm">01</span>
                                     </div>
                                     <div>
-                                        <p class="text-xs text-gray-500">Expertise</p>
-                                        <p class="font-semibold text-sm">Web Development</p>
+                                        <i data-lucide="utensils" class="w-10 h-10 text-blue-400 mb-4"></i>
+                                        <h3 class="text-3xl font-bold">The Pizza Hut</h3>
+                                        <p class="text-gray-400 mt-2">Restaurant website concept</p>
                                     </div>
                                 </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">A responsive restaurant website focused on menu presentation and a clear customer experience.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">Responsive</span><span class="tech-tag">UI/UX</span><span class="tech-tag">Restaurant</span></div>
+                                <a href="https://nehasaeed327.github.io/thepizzahut/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">View Live Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                             </div>
+                        </div>
+                    </article>
 
-                            <div class="absolute -right-5 top-14 glass rounded-2xl px-5 py-4">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
-                                    <span class="text-sm">Available</span>
+                    <!-- Project 02 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="https://nehasaeed327.github.io/mustufa-Group-website/" target="_blank" rel="noopener noreferrer" class="project-cover corporate-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between"><span class="project-category">Business</span><span class="text-gray-500 text-sm">02</span></div>
+                                    <div><i data-lucide="building-2" class="w-10 h-10 text-blue-400 mb-4"></i><h3 class="text-3xl font-bold">Mustufa Group</h3><p class="text-gray-400 mt-2">Corporate website</p></div>
                                 </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">A professional business website concept built to present company information with a polished digital presence.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">Business</span><span class="tech-tag">Responsive</span><span class="tech-tag">UI/UX</span></div>
+                                <a href="https://nehasaeed327.github.io/mustufa-Group-website/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">View Live Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- Project 03 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="https://nehasaeed327.github.io/inkcraft-demo/" target="_blank" rel="noopener noreferrer" class="project-cover creative-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between"><span class="project-category">Creative</span><span class="text-gray-500 text-sm">03</span></div>
+                                    <div><i data-lucide="pen-tool" class="w-10 h-10 text-blue-400 mb-4"></i><h3 class="text-3xl font-bold">Inkcraft</h3><p class="text-gray-400 mt-2">Creative website demo</p></div>
+                                </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">A creative web experience designed around visual presentation, clean sections and modern interaction.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">Creative UI</span><span class="tech-tag">Responsive</span><span class="tech-tag">Modern</span></div>
+                                <a href="https://nehasaeed327.github.io/inkcraft-demo/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">View Live Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 04 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="https://nehasaeed327.github.io/zoon/" target="_blank" rel="noopener noreferrer" class="project-cover modern-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between"><span class="project-category">Web Design</span><span class="text-gray-500 text-sm">04</span></div>
+                                    <div><i data-lucide="layers-3" class="w-10 h-10 text-blue-400 mb-4"></i><h3 class="text-3xl font-bold">Zoon</h3><p class="text-gray-400 mt-2">Modern website concept</p></div>
+                                </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">A modern responsive website concept with a structured layout and polished visual presentation.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">Web Design</span><span class="tech-tag">Responsive</span><span class="tech-tag">UI/UX</span></div>
+                                <a href="https://nehasaeed327.github.io/zoon/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">View Live Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 05 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="http://nehasaeed327.github.io/buschbecks-design/" target="_blank" rel="noopener noreferrer" class="project-cover design-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between"><span class="project-category">Design</span><span class="text-gray-500 text-sm">05</span></div>
+                                    <div><i data-lucide="palette" class="w-10 h-10 text-blue-400 mb-4"></i><h3 class="text-3xl font-bold">Buschbecks Design</h3><p class="text-gray-400 mt-2">Design-focused website</p></div>
+                                </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">A design-led web project focused on visual hierarchy, presentation and a clean responsive experience.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">Design</span><span class="tech-tag">Responsive</span><span class="tech-tag">UI/UX</span></div>
+                                <a href="http://nehasaeed327.github.io/buschbecks-design/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">View Live Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 06 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="https://nehasaeed327.github.io/schanz-resturant/" target="_blank" rel="noopener noreferrer" class="project-cover restaurant-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between"><span class="project-category">Restaurant</span><span class="text-gray-500 text-sm">06</span></div>
+                                    <div><i data-lucide="chef-hat" class="w-10 h-10 text-blue-400 mb-4"></i><h3 class="text-3xl font-bold">Schanz Restaurant</h3><p class="text-gray-400 mt-2">Restaurant website</p></div>
+                                </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">A restaurant-focused website concept designed to make the brand and dining experience easy to explore.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">Restaurant</span><span class="tech-tag">Responsive</span><span class="tech-tag">UI/UX</span></div>
+                                <a href="https://nehasaeed327.github.io/schanz-resturant/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">View Live Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 07 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="https://nehasaeed327.github.io/dog_game/1/" target="_blank" rel="noopener noreferrer" class="project-cover game-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between"><span class="project-category">Game</span><span class="text-gray-500 text-sm">07</span></div>
+                                    <div><i data-lucide="gamepad-2" class="w-10 h-10 text-blue-400 mb-4"></i><h3 class="text-3xl font-bold">Dog Game</h3><p class="text-gray-400 mt-2">Browser game project</p></div>
+                                </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">An interactive browser game project demonstrating front-end interaction and playful web development.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">JavaScript</span><span class="tech-tag">Game</span><span class="tech-tag">Interactive</span></div>
+                                <a href="https://nehasaeed327.github.io/dog_game/1/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">Play Game <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 08 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="https://thirty-six-clone.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-cover react-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between"><span class="project-category">React</span><span class="text-gray-500 text-sm">08</span></div>
+                                    <div><i data-lucide="atom" class="w-10 h-10 text-blue-400 mb-4"></i><h3 class="text-3xl font-bold">Thirty Six Clone</h3><p class="text-gray-400 mt-2">React demo</p></div>
+                                </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">A React-based front-end recreation demonstrating component-driven development and responsive UI.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">React</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Vercel</span></div>
+                                <a href="https://thirty-six-clone.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">View Live Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 09 -->
+                    <article class="project-card reveal group">
+                        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] h-full flex flex-col">
+                            <a href="https://employ-management-react.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-cover dashboard-cover relative overflow-hidden">
+                                <div class="relative z-10 p-7 h-full flex flex-col justify-between min-h-[250px]">
+                                    <div class="flex items-center justify-between"><span class="project-category">React App</span><span class="text-gray-500 text-sm">09</span></div>
+                                    <div><i data-lucide="users-round" class="w-10 h-10 text-blue-400 mb-4"></i><h3 class="text-3xl font-bold">Employee Management</h3><p class="text-gray-400 mt-2">React management demo</p></div>
+                                </div>
+                            </a>
+                            <div class="p-7 flex flex-col flex-1">
+                                <p class="text-gray-500 leading-7">A React management interface demonstrating structured dashboards, employee-focused workflows and application UI.</p>
+                                <div class="flex flex-wrap gap-2 mt-5"><span class="tech-tag">React</span><span class="tech-tag">Dashboard</span><span class="tech-tag">Vercel</span></div>
+                                <a href="https://employ-management-react.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link mt-7">View Live Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+                    </article>
 
                 </div>
-            </div>
-        </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="py-28 border-t border-white/5">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal mt-12 text-center">
+                    <p class="text-gray-500 text-sm">Want to see a project in action?</p>
+                    <a href="https://wa.me/923117329783?text=Hi%20Neha%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website%20project."
+                       target="_blank"
+                       class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-blue-400 hover:text-blue-300 transition">
+                        Let's build your next website <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+
+            </section>
+
+
+        <!-- =========================================
+             PROCESS
+        ========================================== -->
+
+        <section
+            class="py-28 bg-white/[0.015] border-y border-white/5"
+        >
+
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-8"
+            >
+
+                <div
+                    class="grid lg:grid-cols-2 gap-16"
+                >
+
                     <div class="reveal">
+
                         <div class="blue-line mb-6"></div>
-                        <p class="text-electric text-sm font-semibold uppercase tracking-[0.2em]">About Me</p>
-                        <h2 class="text-4xl sm:text-5xl font-bold mt-4 leading-tight">
-                            Turning ideas into <span class="text-gray-500">digital experiences.</span>
+
+                        <p
+                            class="text-electric text-sm font-semibold uppercase tracking-[0.2em]"
+                        >
+                            My Process
+                        </p>
+
+                        <h2
+                            class="text-4xl sm:text-5xl font-bold mt-4 leading-tight"
+                        >
+                            From idea to
+                            <span class="text-gray-500">
+                                launch.
+                            </span>
                         </h2>
-                    </div>
-                    <div class="reveal">
-                        <p class="text-gray-400 text-lg leading-8">
-                            I create websites that don't just look good — they are designed to communicate your brand, make information easy to find, and give your customers a professional online experience.
+
+                        <p
+                            class="text-gray-500 leading-8 mt-6 max-w-lg"
+                        >
+                            A simple and transparent process that keeps
+                            the project focused and easy to understand.
                         </p>
-                        <p class="text-gray-500 leading-7 mt-6">
-                            My focus is clean design, responsive development, strong user experience, and websites that support real business goals.
-                        </p>
+
                     </div>
+
+
+                    <div class="space-y-5">
+
+                        <!-- Step -->
+
+                        <div
+                            class="reveal glass rounded-2xl p-6 flex gap-5"
+                        >
+
+                            <div
+                                class="text-electric font-bold text-xl"
+                            >
+                                01
+                            </div>
+
+                            <div>
+
+                                <h3 class="font-bold text-lg">
+                                    Understand
+                                </h3>
+
+                                <p class="text-gray-500 mt-2 leading-7">
+                                    We discuss your business, audience,
+                                    goals and website requirements.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Step -->
+
+                        <div
+                            class="reveal glass rounded-2xl p-6 flex gap-5"
+                        >
+
+                            <div
+                                class="text-electric font-bold text-xl"
+                            >
+                                02
+                            </div>
+
+                            <div>
+
+                                <h3 class="font-bold text-lg">
+                                    Design
+                                </h3>
+
+                                <p class="text-gray-500 mt-2 leading-7">
+                                    I create a clean visual direction
+                                    that matches your brand.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Step -->
+
+                        <div
+                            class="reveal glass rounded-2xl p-6 flex gap-5"
+                        >
+
+                            <div
+                                class="text-electric font-bold text-xl"
+                            >
+                                03
+                            </div>
+
+                            <div>
+
+                                <h3 class="font-bold text-lg">
+                                    Develop
+                                </h3>
+
+                                <p class="text-gray-500 mt-2 leading-7">
+                                    Your website is developed to be
+                                    responsive, fast and user-friendly.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Step -->
+
+                        <div
+                            class="reveal glass rounded-2xl p-6 flex gap-5"
+                        >
+
+                            <div
+                                class="text-electric font-bold text-xl"
+                            >
+                                04
+                            </div>
+
+                            <div>
+
+                                <h3 class="font-bold text-lg">
+                                    Launch
+                                </h3>
+
+                                <p class="text-gray-500 mt-2 leading-7">
+                                    After final review, your website
+                                    is ready to go live.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- SERVICES SECTION -->
-        <section id="services" class="py-28 bg-white/[0.015] border-y border-white/5">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="reveal text-center max-w-2xl mx-auto">
-                    <div class="blue-line mx-auto mb-6"></div>
-                    <p class="text-electric text-sm font-semibold uppercase tracking-[0.2em]">What I Do</p>
-                    <h2 class="text-4xl sm:text-5xl font-bold mt-4">
-                        Websites built for <span class="text-gray-500">business.</span>
-                    </h2>
-                    <p class="text-gray-500 mt-5">
-                        Professional web solutions for startups, restaurants, and growing businesses.
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section
+            id="contact"
+            class="py-32 relative overflow-hidden"
+        >
+
+            <div
+                class="blue-glow left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            ></div>
+
+
+            <div
+                class="max-w-4xl mx-auto px-6 text-center relative"
+            >
+
+                <div class="reveal">
+
+                    <div class="blue-line mx-auto mb-7"></div>
+
+                    <p
+                        class="text-electric text-sm font-semibold uppercase tracking-[0.2em]"
+                    >
+                        Have a project?
                     </p>
+
+
+                    <h2
+                        class="text-4xl sm:text-6xl font-bold mt-5 leading-tight"
+                    >
+                        Let's build something
+                        <span class="text-electric">
+                            valuable.
+                        </span>
+                    </h2>
+
+
+                    <p
+                        class="text-gray-500 text-lg leading-8 mt-6 max-w-2xl mx-auto"
+                    >
+
+                        Have an idea for a startup, business or website?
+                        Let's discuss how I can turn it into a professional
+                        digital experience.
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/923117329783?text=Hi%20Neha%2C%20I%20have%20a%20website%20project%20I%27d%20like%20to%20discuss."
+                        target="_blank"
+                        class="primary-button inline-flex items-center gap-3 bg-electric px-8 py-4 rounded-xl font-semibold mt-9"
+                    >
+
+                        Start a Conversation
+
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="w-5 h-5"
+                        ></i>
+
+                    </a>
+
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-6 mt-16">
-                    <!-- Service 1 -->
-                    <div class="reveal glass rounded-3xl p-8 hover:border-blue-500/30 transition group">
-                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-7 group-hover:bg-blue-500/20 transition">
-                            <i data-lucide="layout" class="w-7 h-7 text-blue-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Website Development</h3>
-                        <p class="text-gray-500 leading-7 mt-4">
-                            Modern websites designed around your brand, audience, and business goals.
-                        </p>
-                    </div>
-
-                    <!-- Service 2 -->
-                    <div class="reveal glass rounded-3xl p-8 hover:border-blue-500/30 transition group">
-                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-7 group-hover:bg-blue-500/20 transition">
-                            <i data-lucide="smartphone" class="w-7 h-7 text-blue-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Responsive Design</h3>
-                        <p class="text-gray-500 leading-7 mt-4">
-                            Websites that look polished and work smoothly across phones, tablets, and desktops.
-                        </p>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="reveal glass rounded-3xl p-8 hover:border-blue-500/30 transition group">
-                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-7 group-hover:bg-blue-500/20 transition">
-                            <i data-lucide="zap" class="w-7 h-7 text-blue-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Performance & SEO</h3>
-                        <p class="text-gray-500 leading-7 mt-4">
-                            Optimized structure and fast loading times to help your business reach more clients online.
-                        </p>
-                    </div>
-                </div>
             </div>
+
         </section>
+
+
     </main>
 
-    <!-- JavaScript Initializer -->
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer
+        class="border-t border-white/5 py-8"
+    >
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-8"
+        >
+
+            <div
+                class="flex flex-col md:flex-row items-center justify-between gap-4"
+            >
+
+                <div>
+
+                    <p class="font-semibold">
+                        Neha Saeed
+                    </p>
+
+                    <p class="text-sm text-gray-600 mt-1">
+                        Software Engineer
+                    </p>
+
+                </div>
+
+
+                <p
+                    class="text-sm text-gray-600"
+                >
+                    © <span id="year"></span> Neha Saeed. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         FLOATING WHATSAPP BUTTON
+    ========================================== -->
+
+    <a
+        href="https://wa.me/923117329783?text=Hi%20Neha%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website%20project."
+        target="_blank"
+        aria-label="Chat with Neha on WhatsApp"
+        class="whatsapp-button fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center transition duration-300 animate-pulse-soft"
+    >
+
+        <!-- WhatsApp SVG -->
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            class="w-8 h-8 fill-white"
+        >
+
+            <path
+                d="M19.11 17.2c-.27-.14-1.58-.78-1.82-.87-.24-.09-.42-.14-.6.14-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.15-1.33-.8-.71-1.33-1.58-1.49-1.85-.16-.27-.02-.42.12-.56.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.99-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22s.95 2.58 1.09 2.76c.14.18 1.87 2.86 4.53 4.01.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.58-.65 1.8-1.27.22-.62.22-1.16.16-1.27-.07-.11-.24-.18-.51-.31z"
+            />
+
+            <path
+                d="M16.02 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.59 4.46 1.71 6.4L3.13 28.8l6.55-1.72a12.76 12.76 0 0 0 6.34 1.68h.01c7.06 0 12.79-5.73 12.79-12.79 0-3.43-1.33-6.65-3.76-9.07a12.72 12.72 0 0 0-9.04-3.7zm0 23.4h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-3.89 1.02 1.04-3.79-.25-.39a10.58 10.58 0 0 1-1.63-5.66c0-5.86 4.77-10.63 10.64-10.63 2.84 0 5.5 1.11 7.5 3.11 2 2 3.1 4.66 3.1 7.51-.01 5.86-4.77 10.54-10.61 10.54z"
+            />
+
+        </svg>
+
+    </a>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
     <script>
-        // Render Lucide icons
+
+        /* Initialize icons */
+
         lucide.createIcons();
 
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('scrolled');
+
+        /* Current year */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        /* Navbar on scroll */
+
+        const navbar =
+            document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 30) {
+
+                navbar.classList.add("scrolled");
+
             } else {
-                navbar.classList.remove('scrolled');
+
+                navbar.classList.remove("scrolled");
+
             }
+
         });
 
-        // Scroll Reveal Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        /* Mobile menu */
 
-        // Mobile Menu Toggle
-        const menuButton = document.getElementById('menuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
         let menuOpen = false;
 
-        menuButton.addEventListener('click', () => {
+
+        menuButton.addEventListener("click", () => {
+
             menuOpen = !menuOpen;
+
             if (menuOpen) {
-                mobileMenu.classList.remove('max-h-0', 'opacity-0');
-                mobileMenu.classList.add('max-h-96', 'opacity-100');
+
+                mobileMenu.style.maxHeight = "400px";
+
+                mobileMenu.style.opacity = "1";
+
             } else {
-                mobileMenu.classList.remove('max-h-96', 'opacity-100');
-                mobileMenu.classList.add('max-h-0', 'opacity-0');
+
+                mobileMenu.style.maxHeight = "0";
+
+                mobileMenu.style.opacity = "0";
+
             }
+
         });
+
+
+        /* Close mobile menu */
+
+        document.querySelectorAll(".mobile-link").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menuOpen = false;
+
+                mobileMenu.style.maxHeight = "0";
+
+                mobileMenu.style.opacity = "0";
+
+            });
+
+        });
+
+
+        /* Reveal animations */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("active");
+
+                            revealObserver.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+        /* Smooth navigation */
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener("click", function (event) {
+
+                const target =
+                    document.querySelector(this.getAttribute("href"));
+
+                if (!target) return;
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            });
+
+        });
+
     </script>
+
 </body>
 </html>
+    
+</html><
